@@ -1,7 +1,9 @@
 #include"chat_client.h"
 
 void chat_client::write(const chat_message &msg){
-    io_service_.post([this,msg](){                                                        //将一个任务投递到 io_service 的事件队列中.post() 方法会立即返回，不会等待任务执行完毕
+    boost::asio::post(
+        io_service_,
+        [this,msg](){                                                        //将一个任务投递到 io_service 的事件队列中.post() 方法会立即返回，不会等待任务执行完毕
         bool write_in_progress=!write_msgs_.empty();
         write_msgs_.push_back(msg);
         if(!write_in_progress){                                                           //检查 write_msgs_ 队列是否为空，如果为空，表示当前没有正在进行的写操作。
@@ -11,11 +13,11 @@ void chat_client::write(const chat_message &msg){
 }
 
 
-void chat_client::do_connect(tcp::resolver::iterator endpoint_iterator){                  //建立一个TCP连接到由endpoint_iterator(迭代器)指定的网络端点
+void chat_client::do_connect(tcp::resolver::results_type endpoint_iterator){                  //建立一个TCP连接到由resolver_iterator(迭代器)指定的网络端点
     boost::asio::async_connect(
     socket_,
     endpoint_iterator,                                                                
-    [this](boost::system::error_code ec,tcp::resolver::iterator){
+    [this](boost::system::error_code ec,tcp::endpoint){
         if(!ec){
             do_read_header();}
     });
@@ -74,10 +76,10 @@ try{
         return 1;
     }
 
-    boost::asio::io_service io_service;                                           //创建异步调用核心
+    boost::asio::io_context io_service;                                           //创建异步调用核心
 
     tcp::resolver resolver(io_service);                                           //创建TCP解析器对象
-    auto endpoint_iterator=resolver.resolve({argv[1],argv[2]});                   //解析网络地址和端口号，以获取可以用于网络连接的端点信息,返回一个endpoint类型的迭代器
+    auto endpoint_iterator=resolver.resolve(argv[1],argv[2]);                   //解析网络地址和端口号，以获取可以用于网络连接的端点信息,返回一个endpoint类型的迭代器
 
     chat_client c(io_service,endpoint_iterator);                                  //创建客户端
 

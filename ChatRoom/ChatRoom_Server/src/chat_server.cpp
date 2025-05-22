@@ -22,7 +22,7 @@ int main(int argc,char* argv[]){
             return 1;
         }
 
-        boost::asio::io_service io_service;
+        boost::asio::io_context io_service;
 
         std::list<chat_server> servers;
         for(int i=1;i<argc;++i){

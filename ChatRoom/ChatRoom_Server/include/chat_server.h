@@ -5,7 +5,7 @@
 
 class chat_server{
     public:
-    chat_server(boost::asio::io_service &io_service ,const tcp::endpoint &endpoint):acceptor_(io_service,endpoint),
+    chat_server(boost::asio::io_context &io_service ,const tcp::endpoint &endpoint):acceptor_(io_service,endpoint),
     socket_(io_service){
         do_accept();
     }
