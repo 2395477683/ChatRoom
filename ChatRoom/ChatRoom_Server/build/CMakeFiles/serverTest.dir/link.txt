@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/serverTest.dir/src/chat_message.cpp.o CMakeFiles/serverTest.dir/src/chat_room.cpp.o CMakeFiles/serverTest.dir/src/chat_server.cpp.o CMakeFiles/serverTest.dir/src/chat_session.cpp.o  -o serverTest -Wl,-rpath,/usr/local/boost/lib /usr/local/boost/lib/libboost_system.so.1.88.0 -lpthread 
