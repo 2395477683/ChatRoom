@@ -1,3 +1,0 @@
-/mnt/hgfs/share/Scoket/ChatRoom/ChatRoom_Client/build/CMakeFiles/rebuild_cache.dir
-/mnt/hgfs/share/Scoket/ChatRoom/ChatRoom_Client/build/CMakeFiles/clientTest.dir
-/mnt/hgfs/share/Scoket/ChatRoom/ChatRoom_Client/build/CMakeFiles/edit_cache.dir
