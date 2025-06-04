@@ -19,6 +19,10 @@ ChatRoom文件夹保存的是聊天室的基本框架，其他消息协议的聊
 
 # Original_ChatRoom
 
+使用boost实现的最常见的消息协议
+
+#Serilization_ChatRoom
+
 
 
 
