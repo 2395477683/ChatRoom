@@ -13,7 +13,7 @@ ChatRoom文件夹保存的是聊天室的基本框架，其他消息协议的聊
 
 2. 运行命令 make
 
-3.启动客户端 ./clientTest 服务器ip地址 服务器端口 或启动服务器端  ./serverTest 服务器端口
+3. 启动客户端 ./clientTest 服务器ip地址 服务器端口 或启动服务器端  ./serverTest 服务器端口
 
 # Original_ChatRoom
 
