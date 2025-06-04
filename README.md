@@ -29,7 +29,11 @@ linux中使用apt安装boost无法生成cmake所需配置文件,请手动安装�
 
 # Json_ChatRoom 
 
-使用json
+使用json格式进行消息通信,提升了可读性,但开销更大
+
+# Protocal_ChatRoom
+
+使用Protocol Buffers,它专为高性能数据传输和存储而设计具有最好的性能.
 
 
 
