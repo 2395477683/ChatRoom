@@ -23,7 +23,13 @@ linux中使用apt安装boost无法生成cmake所需配置文件,请手动安装�
 
 使用boost实现的最常见的消息协议
 
-#Serilization_ChatRoom
+# Serilization_ChatRoom
+
+使用boost库中的Serilization组件对消息进行序列化,提高了消息通信的安全性.
+
+# Json_ChatRoom 
+
+使用json
 
 
 
